@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base Dark Background -->
+    <item>
+        <shape>
+            <solid android:color="#060B18"/>
+        </shape>
+    </item>
+
+    <!-- Purple Glow (Left Middle) -->
+    <item>
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="420"
+                android:centerX="0.25"
+                android:centerY="0.55"
+                android:startColor="#5B2A86"
+                android:endColor="#00000000"/>
+        </shape>
+    </item>
+
+    <!-- Teal Glow (Bottom Right) -->
+    <item>
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="450"
+                android:centerX="0.75"
+                android:centerY="0.85"
+                android:startColor="#0C6F6A"
+                android:endColor="#00000000"/>
+        </shape>
+    </item>
+
+    <!-- Subtle Blue Glow (Top Right) -->
+    <item>
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="500"
+                android:centerX="0.80"
+                android:centerY="0.10"
+                android:startColor="#0A2A4A"
+                android:endColor="#00000000"/>
+        </shape>
+    </item>
+
+</layer-list>

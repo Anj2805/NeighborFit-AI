@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "391469312360",
+    "project_id": "neighborfitai",
+    "storage_bucket": "neighborfitai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391469312360:android:45f8cb1e1bc78b52090edd",
+        "android_client_info": {
+          "package_name": "com.example.neighborfitai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgOEs4Ywgw1Aw5KgdP2bOkQrie-MF5WVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391469312360:android:30ca3261f662485a090edd",
+        "android_client_info": {
+          "package_name": "com.neighborfitai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgOEs4Ywgw1Aw5KgdP2bOkQrie-MF5WVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F111A">
+
+    <!-- Map Placeholder (Replace with Google Maps Fragment later) -->
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1A1C26">
+        
+        <!-- Placeholder for actual Map -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:alpha="0.4"
+            android:src="@drawable/onboarding_dark_gradient" />
+            
+        <!-- Floating Location Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="320dp"
+            android:src="@drawable/locationpin"
+            app:backgroundTint="#2A2D3E"
+            app:tint="@android:color/white"
+            app:fabSize="mini"
+            app:elevation="4dp" />
+    </FrameLayout>
+
+    <!-- Top Overlay (Search & Filters) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Search Bar -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clSearch"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_edittext"
+            android:backgroundTint="#CC1A1C26"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_house"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#80FFFFFF" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/transparent"
+                android:hint="Search neighborhood..."
+                android:textColor="@android:color/white"
+                android:textColorHint="#80FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/ivDna"
+                app:layout_constraintStart_toEndOf="@id/ivSearch" />
+
+            <ImageView
+                android:id="@+id/ivDna"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/indicator_inactive"
+                android:backgroundTint="#1A5B8CFF"
+                android:padding="6dp"
+                android:src="@drawable/lifestyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#5B8CFF" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Filters -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/clSearch">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Safety First"
+                    android:textColor="@android:color/white"
+                    app:chipBackgroundColor="#5B8CFF"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Low Rent"
+                    android:textColor="@android:color/white"
+                    app:chipBackgroundColor="#1AFFFFFF"
+                    app:chipStrokeColor="#33FFFFFF"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Nightlife"
+                    android:textColor="@android:color/white"
+                    app:chipBackgroundColor="#1AFFFFFF"
+                    app:chipStrokeColor="#33FFFFFF"
+                    app:chipStrokeWidth="1dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="High Match"
+                    android:textColor="@android:color/white"
+                    app:chipBackgroundColor="#1AFFFFFF"
+                    app:chipStrokeColor="#33FFFFFF"
+                    app:chipStrokeWidth="1dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Bottom Sheet Insight Panel -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="300dp"
+        app:cardBackgroundColor="#1A1C26"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="16dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Handle -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:background="#33FFFFFF" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvPanelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearby Insights"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="3 neighborhoods matching your DNA"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPanelTitle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See All"
+                    android:textColor="#5B8CFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/item_map_neighborhood" />
+                    
+                    <!-- Item 2 (Manual inclusion for UI demo) -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardBackgroundColor="#2A2D3E"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp">
+                            <FrameLayout android:id="@+id/flImage2" android:layout_width="80dp" android:layout_height="80dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                                <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="match_parent" app:cardCornerRadius="16dp"><ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/onboarding3" /></androidx.cardview.widget.CardView>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="top|center_horizontal" android:layout_marginTop="-4dp" android:background="@drawable/indicator_active" android:backgroundTint="#5B8CFF" android:paddingHorizontal="8dp" android:paddingVertical="2dp" android:text="84% Fit" android:textColor="@android:color/white" android:textSize="10sp" android:textStyle="bold" />
+                            </FrameLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/ivExpand2" app:layout_constraintStart_toEndOf="@id/flImage2" app:layout_constraintTop_toTopOf="parent">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Echo Park" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="Moderate Safety" android:textColor="#80FFFFFF" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Avg. Rent: $2.2k - $3.8k" android:textColor="#B0B0B0" android:textSize="12sp" />
+                            </LinearLayout>
+                            <ImageView android:id="@+id/ivExpand2" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/indicator_inactive" android:backgroundTint="#1AFFFFFF" android:padding="8dp" android:src="@drawable/rightarrow" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:tint="@android:color/white" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Item 3 -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardBackgroundColor="#2A2D3E"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp">
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp">
+                            <FrameLayout android:id="@+id/flImage3" android:layout_width="80dp" android:layout_height="80dp" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                                <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="match_parent" app:cardCornerRadius="16dp"><ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/onboarding3" /></androidx.cardview.widget.CardView>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="top|center_horizontal" android:layout_marginTop="-4dp" android:background="@drawable/indicator_active" android:backgroundTint="#5B8CFF" android:paddingHorizontal="8dp" android:paddingVertical="2dp" android:text="92% Fit" android:textColor="@android:color/white" android:textSize="10sp" android:textStyle="bold" />
+                            </FrameLayout>
+                            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/ivExpand3" app:layout_constraintStart_toEndOf="@id/flImage3" app:layout_constraintTop_toTopOf="parent">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Los Feliz" android:textColor="@android:color/white" android:textSize="18sp" android:textStyle="bold" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="High Safety" android:textColor="#80FFFFFF" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="Avg. Rent: $3.1k - $4.9k" android:textColor="#B0B0B0" android:textSize="12sp" />
+                            </LinearLayout>
+                            <ImageView android:id="@+id/ivExpand3" android:layout_width="32dp" android:layout_height="32dp" android:background="@drawable/indicator_inactive" android:backgroundTint="#1AFFFFFF" android:padding="8dp" android:src="@drawable/rightarrow" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:tint="@android:color/white" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Nav Placeholder -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        app:cardBackgroundColor="#0F111A"
+        app:cardElevation="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/home" app:tint="#999999" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Home" android:textColor="#999999" android:textSize="10sp" /></LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/map" app:tint="#5B8CFF" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Map" android:textColor="#5B8CFF" android:textSize="10sp" android:textStyle="bold" /></LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/bookmark" app:tint="#999999" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Saved" android:textColor="#999999" android:textSize="10sp" /></LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_person" app:tint="#999999" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Profile" android:textColor="#999999" android:textSize="10sp" /></LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
