@@ -1,5 +1,63 @@
 # NeighborFit AI - Smart Neighborhood Recommendation App
 
+## 📱 App Screenshots
+
+### 🚀 Splash Screen
+<p align="center">
+  <img src="results_screen/splash.png" width="300"/>
+</p>
+
+### 👋 Onboarding
+<p align="center">
+  <img src="results_screen/onboarding.png" width="300"/>
+</p>
+
+### 🔐 Login Page
+<p align="center">
+  <img src="results_screen/login.png" width="300"/>
+</p>
+
+### 📝 Signup Page
+<p align="center">
+  <img src="results_screen/singup.png" width="300"/>
+</p>
+
+### 🏠 Home Dashboard
+<p align="center">
+  <img src="results_screen/dashboard.png" width="300"/>
+</p>
+
+### 📊 Result Page
+<p align="center">
+  <img src="results_screen/result.png" width="300"/>
+</p>
+
+### ⚙ Preference Selection
+<p align="center">
+  <img src="results_screen/prefrence.png" width="300"/>
+</p>
+
+### 🏘 Neighborhood Details
+<p align="center">
+  <img src="results_screen/detail.png" width="300"/>
+</p>
+
+### 👤 Profile Page
+<p align="center">
+  <img src="results_screen/profile.png" width="300"/>
+</p>
+
+### 🗺 Map View
+<p align="center">
+  <img src="results_screen/map%20view.png" width="300"/>
+</p>
+
+### 🛠 Admin Portal
+<p align="center">
+  <img src="results_screen/admin%20portal.png" width="300"/>
+</p>
+  
+
 ## 1. Introduction
 NeighborFit AI is a cloud-enabled Android application developed using Kotlin that helps users find the most suitable neighborhood based on their lifestyle preferences.
 
