@@ -44,7 +44,7 @@
             android:layout_height="40dp"
             android:background="@drawable/bg_edittext_light"
             android:padding="10dp"
-            android:src="@drawable/lifestyle"
+            android:src="@drawable/settings_sliders"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -280,7 +280,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/onboarding3" />
+                            android:src="@drawable/neighborhood" />
                     </androidx.cardview.widget.CardView>
                     <TextView
                         android:id="@+id/tvName1"
@@ -343,7 +343,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/onboarding3" />
+                            android:src="@drawable/neighborhood" />
                     </androidx.cardview.widget.CardView>
                     <TextView
                         android:id="@+id/tvName2"
@@ -417,7 +417,7 @@
                     android:background="@drawable/indicator_inactive"
                     android:backgroundTint="#F0F7FF"
                     android:padding="10dp"
-                    android:src="@drawable/lifestyle"
+                    android:src="@drawable/settingss"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="#5B8CFF" />

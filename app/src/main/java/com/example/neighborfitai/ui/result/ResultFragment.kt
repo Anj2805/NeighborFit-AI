@@ -20,7 +20,7 @@ class ResultFragment : Fragment() {
     
     // In a real Hilt setup, this would be injected.
     // private val viewModel: ResultViewModel by viewModels()
-    private lateinit var adapter: NeighborhoodAdapter
+    // private lateinit var adapter: NeighborhoodAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +34,7 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        setupRecyclerView()
+        // setupRecyclerView()
         setupListeners()
         
         // Example of observing UI state
@@ -49,13 +49,13 @@ class ResultFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = NeighborhoodAdapter { neighborhood ->
-            // Handle item click - Navigate to DetailActivity
-        }
-        binding.itemResultContainer.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            this.adapter = this@ResultFragment.adapter
-        }
+        // adapter = NeighborhoodAdapter { neighborhood ->
+        //     // Handle item click - Navigate to DetailActivity
+        // }
+        // binding.itemResultContainer.apply {
+        //     layoutManager = LinearLayoutManager(requireContext())
+        //     this.adapter = this@ResultFragment.adapter
+        // }
     }
 
     private fun setupListeners() {

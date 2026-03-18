@@ -20,5 +20,18 @@ class MainActivity : AppCompatActivity() {
                 insets
             }
         }
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main, com.example.neighborfitai.ui.home.HomeFragment())
+                .commit()
+        }
+    }
+
+    fun navigateTo(fragment: androidx.fragment.app.Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

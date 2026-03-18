@@ -134,7 +134,7 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/lifestyle"
+                    android:src="@drawable/ai"
                     app:tint="#5B8CFF" />
 
                 <LinearLayout

@@ -234,8 +234,8 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@drawable/icon_black"
-                                app:tint="#1A1A1A" />
+                                android:src="@drawable/icon"
+                                />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -356,7 +356,7 @@
                         <ImageView
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@drawable/commute"
+                            android:src="@drawable/trend"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:tint="#1A1A1A" />
@@ -481,12 +481,12 @@
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="12dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="PostgreSQL DB (Cluster A)" android:textColor="#1A1A1A" android:textSize="14sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="28ms" android:textColor="#666666" android:textSize="12sp" />
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="12dp" android:src="@drawable/lifestyle" app:tint="#CCCCCC" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="12dp" android:src="@drawable/more" app:tint="#CCCCCC" />
                 </LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingVertical="12dp" android:orientation="horizontal" android:gravity="center_vertical">
                     <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Search Indexer (Elastic)" android:textColor="#1A1A1A" android:textSize="14sp" android:textStyle="bold" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="142ms" android:textColor="#666666" android:textSize="12sp" />
-                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="12dp" android:src="@drawable/lifestyle" app:tint="#CCCCCC" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="12dp" android:src="@drawable/more" app:tint="#CCCCCC" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -637,7 +637,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:src="@drawable/ic_house"
+        android:src="@drawable/shield"
         app:backgroundTint="#FF5B5B"
         app:tint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"

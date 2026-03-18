@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/onboarding_dark_gradient">
+    android:background="@drawable/login_dark_gradient">
 
     <!-- Top Toolbar -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:paddingHorizontal="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -46,6 +48,7 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/bg_edittext"
             android:padding="10dp"
+            app:tint="#FFFFFF"
             android:src="@drawable/notification"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnSettings"
@@ -55,9 +58,9 @@
             android:id="@+id/btnSettings"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/bg_edittext"
             android:padding="10dp"
-            android:src="@drawable/icon_black"
+            android:background="@drawable/bg_edittext"
+            android:src="@drawable/settings_sliders"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -69,6 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btnSave"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -132,6 +137,7 @@
                             android:layout_height="44dp"
                             android:background="@drawable/bg_edittext"
                             android:padding="10dp"
+                            app:tint="#4E82EA"
                             android:src="@drawable/rupeesymbol" />
 
                         <LinearLayout
@@ -221,6 +227,7 @@
                             android:layout_height="44dp"
                             android:background="@drawable/bg_edittext"
                             android:padding="10dp"
+                            app:tint="#4E82EA"
                             android:src="@drawable/locationpin" />
 
                         <LinearLayout
@@ -353,6 +360,7 @@
                             android:layout_height="44dp"
                             android:background="@drawable/bg_edittext"
                             android:padding="10dp"
+                            app:tint="#4E82EA"
                             android:src="@drawable/security" />
 
                         <LinearLayout
@@ -455,6 +463,7 @@
                             android:layout_height="44dp"
                             android:background="@drawable/bg_edittext"
                             android:padding="10dp"
+                            app:tint="#4E82EA"
                             android:src="@drawable/commute" />
 
                         <LinearLayout
@@ -557,6 +566,7 @@
                             android:layout_height="44dp"
                             android:background="@drawable/bg_edittext"
                             android:padding="10dp"
+                            app:tint="#4E82EA"
                             android:src="@drawable/lifestyle" />
 
                         <LinearLayout
@@ -695,6 +705,7 @@
                             android:layout_height="44dp"
                             android:background="@drawable/bg_edittext"
                             android:padding="10dp"
+                            app:tint="#4E82EA"
                             android:src="@drawable/education" />
 
                         <LinearLayout
@@ -834,6 +845,8 @@
         app:iconGravity="textStart"
         app:iconPadding="12dp"
         app:iconTint="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

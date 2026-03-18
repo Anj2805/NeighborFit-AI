@@ -24,12 +24,13 @@ class PreferenceViewModel(private val preferenceManager: UserPreferenceManager) 
         viewModelScope.launch {
             val preference = Preference(
                 maxBudget = budget,
+                preferredCity = city,
                 safetyWeight = safety,
                 commuteWeight = commute,
                 schoolWeight = schools,
                 nightlifeWeight = nightlife
             )
-            preferenceManager.savePreferences(preference, city)
+            preferenceManager.savePreferences(preference)
             _navigationEvent.emit(PreferenceNavigation.NavigateToHome)
         }
     }
