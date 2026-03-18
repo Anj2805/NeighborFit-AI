@@ -15,7 +15,9 @@ fun NeighborhoodEntity.toDomain(): Neighborhood {
         nightlifeScore = nightlifeScore,
         imageUrl = imageUrl,
         matchPercentage = 0,
-        aiExplanation = ""
+        aiExplanation = "<GOOGLE_API_KEY>",
+        latitude = latitude,
+        longitude = longitude
     )
 }
 
@@ -29,6 +31,8 @@ fun Neighborhood.toEntity(): NeighborhoodEntity {
         transportScore = transportScore,
         schoolScore = schoolScore,
         nightlifeScore = nightlifeScore,
-        imageUrl = imageUrl
+        imageUrl = imageUrl,
+        latitude = latitude,
+        longitude = longitude
     )
 }
