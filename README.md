@@ -1,199 +1,284 @@
-# NeighborFit AI - Smart Neighborhood Recommendation App
-
-## 📱 App Screenshots
-
-### 🚀 Splash Screen
-<p align="center">
-  <img src="results_screen/splash.png" width="300"/>
-</p>
-
-### 👋 Onboarding
-<p align="center">
-  <img src="results_screen/onboarding.png" width="300"/>
-</p>
-
-### 🔐 Login Page
-<p align="center">
-  <img src="results_screen/login.png" width="300"/>
-</p>
-
-### 📝 Signup Page
-<p align="center">
-  <img src="results_screen/singup.png" width="300"/>
-</p>
-
-### 🏠 Home Dashboard
-<p align="center">
-  <img src="results_screen/dashboard.png" width="300"/>
-</p>
-
-### 📊 Result Page
-<p align="center">
-  <img src="results_screen/result.png" width="300"/>
-</p>
-
-### ⚙ Preference Selection
-<p align="center">
-  <img src="results_screen/prefrence.png" width="300"/>
-</p>
-
-### 🏘 Neighborhood Details
-<p align="center">
-  <img src="results_screen/detail.png" width="300"/>
-</p>
-
-### 👤 Profile Page
-<p align="center">
-  <img src="results_screen/profile.png" width="300"/>
-</p>
-
-### 🗺 Map View
-<p align="center">
-  <img src="results_screen/map%20view.png" width="300"/>
-</p>
-
-### 🛠 Admin Portal
-<p align="center">
-  <img src="results_screen/admin%20portal.png" width="300"/>
-</p>
-  
+# NeighborFit AI – Smart Neighborhood Recommendation App
 
 ## 1. Introduction
 NeighborFit AI is a cloud-enabled Android application developed using Kotlin that helps users find the most suitable neighborhood based on their lifestyle preferences.
 
-The application integrates:
-*   Smart weighted recommendation algorithm
-*   Firebase cloud services
-*   AI-based personalized explanations (Google Gemini AI)
-*   Advanced networking using Retrofit
-*   Device sensors (Light, Accelerometer)
-*   WebView integration (Google Maps)
-*   Real-time database and authentication
+The app combines **location intelligence, preference-based matching, and social discovery** to create a smarter way to build local communities.
 
-The system aims to simplify decision-making for users who struggle with selecting the right residential area due to multiple complex factors like budget, safety, and lifestyle compatibility.
+---
 
-## 2. Problem Statement
-Finding an appropriate neighborhood is challenging because:
-*   Users have multiple preferences (budget, safety, amenities, lifestyle).
-*   Data from multiple sources is overwhelming.
-*   Most platforms provide listings but not personalized reasoning.
-*   No intelligent explanation system is available.
+# Project Status (March 18, 2026)
 
-NeighborFit AI addresses these issues using a combination of scoring algorithms and artificial intelligence.
+The project is currently in the **feature integration phase**.
 
-## 3. Objectives of the Project
-*   Build a cloud-enabled Android application using Kotlin.
-*   Implement MVVM architecture for clean code separation.
-*   Develop a smart weighted matching algorithm.
-*   Integrate Google Gemini AI for intelligent explanations.
-*   Implement Firebase Authentication and Firestore database.
-*   Implement CRUD operations for neighborhood management.
-*   Integrate Retrofit for advanced networking.
-*   Implement device sensors and WebView features.
-*   Deploy the application in Play Store compliant format.
+Completed:
 
-## 4. Technology Stack
-| Component | Technology |
-| :--- | :--- |
-| **Language** | Kotlin |
-| **Architecture** | MVVM (Model-View-ViewModel) + Clean Architecture |
-| **Database** | Firebase Firestore & Room Database (Local Storage) |
-| **Authentication** | Firebase Auth (Email & Google Sign-In) |
-| **Networking** | Retrofit & Coroutines |
-| **AI Integration** | Google Gemini API |
-| **Cloud Messaging** | Firebase Cloud Messaging (FCM) |
-| **Hardware** | Accelerometer, Light Sensor, Bluetooth monitoring |
-| **Web Content** | WebView (Maps & City Info) |
+* UI/UX implementation for all major screens
+* Firebase Authentication (Login & Registration)
+* Navigation flow setup
+* Project architecture structure (MVVM + Clean Architecture)
 
-## 5. System Architecture Overview
-The system follows a strict Clean Architecture pattern:
-**Activity/Fragment → ViewModel → UseCase → Repository → Data Source (Room/Firebase)**
+In Progress:
 
-### 📁 Project Structure
+* Firestore data models
+* Matching algorithm
+* Dashboard data loading
+* Map integration
+* Favorites system
+
+Planned:
+
+* Real-time neighbor discovery
+* Compatibility scoring engine
+* Location-based recommendation system
+
+---
+
+# Application Screens
+
+The following UI screens have already been implemented:
+
+1. Splash Screen
+2. Onboarding Screens
+3. Login / Register
+4. Preference Setup Screen
+5. Home Dashboard
+6. Results Screen
+7. Detail Screen
+8. Favorites Screen
+9. Map Screen
+10. Profile Screen
+11. Admin Panel
+
+Assets used for UI mockups are currently stored inside:
+
+```
+results_screen/
+   splash.png
+   onboarding.png
+   login.png
+   signup.png
+```
+
+These are **design references and not functional modules**.
+
+---
+
+# Technology Stack
+
+NeighborFit AI is built using modern Android development technologies.
+
+Core Technologies:
+
+* Kotlin
+* Android Studio
+* MVVM Architecture
+* Clean Architecture principles
+* Hilt Dependency Injection
+* Kotlin Coroutines
+
+Backend & Data:
+
+* Firebase Authentication
+* Firestore Database (planned)
+* DataStore for local preference storage
+
+Networking & APIs (planned):
+
+* Retrofit
+* Google Maps SDK
+* Location Services (Fused Location Provider)
+
+---
+
+# Architecture
+
+The application follows a **Clean Architecture pattern** to maintain scalability and separation of concerns.
+
+```
+UI (Activity / Fragment)
+        ↓
+ViewModel
+        ↓
+UseCase (Domain Logic)
+        ↓
+Repository
+        ↓
+DataSource (Firebase / DataStore / APIs)
+```
+
+Project structure:
+
 ```
 app/src/main/java/com/example/neighborfitai/
-├── data/               # Data Layer: Implementation of repositories and data sources
-│   ├── dao/            # Room DAOs
-│   ├── entity/         # Room Entities
-│   ├── local/          # DataStore and Local DB setup
-│   ├── mapper/         # Mappers (Entity ↔ Domain, DTO ↔ Domain)
-│   ├── model/          # DTOs (Data Transfer Objects)
-│   ├── remote/         # Retrofit API Services
-│   └── repository/     # Repository Implementations
-├── domain/             # Domain Layer: Business logic and abstractions
-│   ├── model/          # Pure Kotlin Domain Models
-│   ├── repository/     # Repository Interfaces
-│   └── usecase/        # Business Logic (Use Cases)
-├── ui/                 # Presentation Layer: UI and ViewModels
-│   ├── admin/          # Admin Dashboard
-│   ├── auth/           # Login, Register, Forgot Password
-│   ├── detail/         # Neighborhood Details
-│   ├── home/           # Main Dashboard
-│   ├── map/            # Interactive Map View
-│   ├── onboarding/     # ViewPager2 Onboarding flow
-│   ├── preference/     # User Preference Input
-│   ├── profile/        # User Profile & Settings
-│   ├── result/         # AI Matching Results
-│   ├── splash/         # Entry Splash Screen
-│   └── state/          # UI State classes
-├── utils/              # Helper classes and extensions
-├── di/                 # Dependency Injection (Hilt)
-└── MainActivity.kt
+
+data/
+   repositories
+   datastore
+   firebase
+
+domain/
+   models
+   usecases
+
+ui/
+   onboarding
+   auth
+   preferences
+   home
+   results
+   map
+   profile
+   admin
+
+utils/
+di/
+
+MainActivity.kt
 ```
 
-## 6. User Roles
-### 6.1 Normal User
-*   Register and login via Email or Google.
-*   Enter lifestyle preferences (Budget, City, Priorities).
-*   View recommended neighborhoods with AI-generated explanations.
-*   Bookmark favorite neighborhoods (Offline support via Room).
-*   Chat with an AI assistant for contextual advice.
-*   Receive real-time notifications.
+---
 
-### 6.2 Admin
-*   Manage the neighborhood dataset via Firestore.
-*   Perform CRUD operations (Add, Update, Delete areas).
-*   Monitor system analytics and API latency.
-*   Trigger FCM alerts for system-wide updates.
+# Current Navigation Flow
 
-## 7. Application Screens
-*   **Splash Screen**: Initializes Firebase and checks session state.
-*   **Onboarding**: Interactive ViewPager2 guide to app features.
-*   **Login/Register**: Secure authentication via Firebase.
-*   **Preference Input**: Detailed collection of user lifestyle data.
-*   **Results Screen**: Ranked list of neighborhoods with match percentages.
-*   **Detail Screen**: Comprehensive view of scores, metrics, and AI insights.
-*   **Map View**: Google Maps integration with nearby insights.
-*   **Profile**: User stats, saved neighborhoods, and account settings.
-*   **Admin Dashboard**: Real-time system monitoring and dataset management.
+```
+Splash
+   ↓
+Onboarding
+   ↓
+Login / Register
+   ↓
+Hello World (temporary placeholder)
+```
 
-## 8. Core Functional Modules
-### 8.1 Smart Matching Engine
-Implements weighted scoring to find the best residential fit:
-`Final Score = (0.35 × Budget Match) + (0.25 × Safety Score) + (0.20 × Lifestyle Match) + (0.20 × Amenities Match)`
+Next milestone:
 
-### 8.2 AI Integration Module
-Uses Google Gemini API to provide personalized reasoning for matches and a contextual chat interface.
+```
+Login
+   ↓
+Preference Setup
+   ↓
+Home Dashboard
+   ↓
+Matching Results
+```
 
-### 8.3 Sensor Module
-*   **Light Sensor**: Auto-toggles UI themes based on ambient light.
-*   **Accelerometer**: Detects device movement for interactive UI features.
+---
 
-## 9. Security Features
-*   Secure Firebase authentication and Firestore rules.
-*   BuildConfig usage for sensitive API keys.
-*   Strict input validation and error handling.
+# Development Setup
 
-## 10. Testing & Validation
-*   Comprehensive UI flow testing (Splash → Results).
-*   Algorithmic validation for matching accuracy.
-*   Room + Firestore synchronization checks.
-*   Stability testing across different device configurations.
+To run the project locally:
 
-## 11. Future Enhancements
-*   Integration with live Real Estate APIs for up-to-date listings.
-*   Multi-language support for AI insights.
-*   Advanced predictive analytics for neighborhood price trends.
+1. Clone the repository
 
-## 12. Conclusion
-NeighborFit AI demonstrates modern Android development skills by combining Artificial Intelligence, Firebase services, and Clean Architecture to solve real-world urban living challenges.
+```
+git clone <repository-url>
+```
+
+2. Open the project in **Android Studio**
+
+3. Ensure `local.properties` contains your Android SDK path.
+
+Example:
+
+```
+sdk.dir=/Users/yourname/Library/Android/sdk
+```
+
+4. Sync Gradle dependencies.
+
+5. Build and run on an **Android Emulator or Physical Device**.
+
+---
+
+# Implementation Roadmap
+
+Next development tasks:
+
+### Phase 1 – Core Data Layer
+
+* Create Firestore user models
+* Implement DataStore preference storage
+* Create repository layer
+
+### Phase 2 – Matching System
+
+* Fetch users from Firestore
+* Build compatibility scoring engine
+* Filter neighbors by distance
+
+### Phase 3 – Dashboard Integration
+
+* Connect results UI with real data
+* Display compatibility score
+* Add user interaction logic
+
+### Phase 4 – Map Discovery
+
+* Integrate Google Maps SDK
+* Show nearby compatible neighbors
+* Enable marker-based profile viewing
+
+### Phase 5 – Social Features
+
+* Favorites system
+* Profile editing
+* User discovery improvements
+
+---
+
+# App Screenshots
+
+Below are preview screens of the NeighborFit AI application.
+
+## Splash Screen
+
+## Onboarding
+
+## Login Screen
+
+## Signup Screen
+
+<p align="center">
+  <img src="results_screen/splash.png" width="240" alt="Splash Screen" />
+  <img src="results_screen/onboarding.png" width="240" alt="Onboarding" />
+  <img src="results_screen/login.png" width="240" alt="Login Screen" />
+  <img src="results_screen/singup.png" width="240" alt="Signup Screen" />
+</p>
+
+---
+
+# Future Enhancements
+
+Planned improvements for later versions:
+
+* Real-time neighbor matching
+* Direct messaging / chat system
+* Community event discovery
+* Real estate and neighborhood analytics
+* AI-based compatibility prediction
+* Dark mode & dynamic UI themes
+
+---
+
+# Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+If you'd like to contribute:
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+---
+
+# License
+
+This project will be released under an open-source license (to be added).
+
+Example options:
+
+* MIT License
+* Apache 2.0
+* GPL
